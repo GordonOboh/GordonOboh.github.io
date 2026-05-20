@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gordon Oboh — Data Analytics</title>
+  <title>Gordon Oboh — Data Science &amp; Robotics</title>
   <style>
     :root[data-theme="dark"] {
       --bg:      #0d1117;
@@ -74,7 +74,7 @@
     /* ── Hero ── */
     .hero { padding-top: 1rem; }
     .hero h1 { margin-bottom: 0.5rem; }
-    .hero .tagline { font-size: 1rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .hero .tagline { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
     .hero .links { display: flex; gap: 1rem; flex-wrap: wrap; }
     .hero .links a {
       font-size: 0.9rem;
@@ -86,32 +86,21 @@
     }
     .hero .links a:hover { border-color: var(--accent); text-decoration: none; }
 
-    /* ── Projects ── */
-    .projects { display: flex; flex-direction: column; gap: 1rem; }
+    /* ── Track cards ── */
+    .tracks { display: flex; flex-direction: column; gap: 1rem; }
 
-    .card {
+    .track-card {
+      display: block;
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.5rem 2rem;
       background: var(--surface);
-      transition: border-color 0.15s;
+      transition: border-color 0.15s, transform 0.15s;
     }
-    .card:hover { border-color: var(--accent); }
-
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-    .card-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .card-title a { color: var(--text); }
-    .card-title a:hover { color: var(--accent); text-decoration: none; }
-    .card-desc { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.9rem; }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.55rem;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
+    .track-card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+    .track-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text); }
+    .track-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0; }
+    .track-card .arrow { float: right; color: var(--accent); font-size: 1.2rem; }
 
     /* ── Skills ── */
     .skills-grid {
@@ -137,7 +126,7 @@
   <header>
     <span style="font-weight:600; font-size:0.95rem;">Gordon Oboh</span>
     <nav>
-      <a href="#projects">Projects</a>
+      <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -147,116 +136,30 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <h1>Data Analytics &amp; Data Science</h1>
-      <p class="tagline">Turning raw data into clear, actionable insights.</p>
+      <h1>Data Science &amp; Robotics</h1>
+      <p class="tagline">Turning raw data into insights and ideas into hardware that moves.</p>
       <div class="links">
         <a href="https://github.com/GordonOboh" target="_blank">GitHub</a>
         <a href="mailto:goboh@position.8shield.net">Email</a>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="projects">
+    <!-- Work -->
+    <section id="work">
+      <h2>Work</h2>
+      <div class="tracks">
 
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://github.com/GordonOboh/conus-realestate-eda" target="_blank">
-                  CONUS Real Estate EDA
-                </a>
-              </div>
-              <p class="card-desc">
-                Exploratory analysis of ~700,000 U.S. rental listings. Covers regional pricing patterns,
-                property size distributions, amenity breakdowns, and geospatial visualization overlaid
-                on Stadia Maps tiles.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">R</span>
-            <span class="tag">ggplot2</span>
-            <span class="tag">ggmap</span>
-            <span class="tag">tidyverse</span>
-            <span class="tag">Geospatial</span>
-            <span class="tag">EDA</span>
-          </div>
-        </div>
+        <a class="track-card" href="data-science.html">
+          <span class="arrow">&rarr;</span>
+          <h3>Data Science</h3>
+          <p>Exploratory analysis, machine learning, and statistical modeling — from real estate pricing to recession prediction.</p>
+        </a>
 
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://github.com/GordonOboh/RecessionPredictionML" target="_blank">
-                  Recession Prediction ML
-                </a>
-              </div>
-              <p class="card-desc">
-                Machine learning models trained on macroeconomic indicators to predict U.S. recession
-                probability. Compares multiple classifiers with feature importance and evaluation metrics.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">pandas</span>
-            <span class="tag">matplotlib</span>
-            <span class="tag">Classification</span>
-            <span class="tag">Feature Engineering</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://github.com/GordonOboh/MonU_Applied_DataS_cience_Project" target="_blank">
-                  U.S. Housing Price Feature Analysis
-                </a>
-              </div>
-              <p class="card-desc">
-                Ensemble regression models on ~385,000 Craigslist rental listings to identify which
-                property features drive pricing. Pipeline covers EDA, IQR-based cleaning, K-Means
-                location clustering, and target encoding.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">pandas</span>
-            <span class="tag">K-Means</span>
-            <span class="tag">Ensemble Models</span>
-            <span class="tag">Feature Engineering</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-title">
-                <a href="https://github.com/GordonOboh/optlearningcontrol/tree/mainPersonal" target="_blank">
-                  Optimal &amp; Learning Control for Robotics
-                </a>
-              </div>
-              <p class="card-desc">
-                Coursework from NYU ROB-GY 6323 — reinforcement learning and optimal control applied
-                to robotics problems. Implemented in Python using NumPy and SciPy across Jupyter notebooks.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Reinforcement Learning</span>
-            <span class="tag">Optimal Control</span>
-            <span class="tag">NumPy</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">NYU Coursework</span>
-          </div>
-        </div>
+        <a class="track-card" href="robotics.html">
+          <span class="arrow">&rarr;</span>
+          <h3>Robotics</h3>
+          <p>Control systems, mechatronics, kinematics, and robot design — academic projects and STEM mentorship.</p>
+        </a>
 
       </div>
     </section>
@@ -267,39 +170,35 @@
       <div class="skills-grid">
         <div class="skill-group">
           <div class="label">Languages</div>
-          <div class="items">R · Python · SQL</div>
+          <div class="items">Python · R · SQL · C/C++ · MATLAB</div>
         </div>
         <div class="skill-group">
           <div class="label">Visualization</div>
-          <div class="items">ggplot2 · matplotlib · seaborn · viridis</div>
+          <div class="items">ggplot2 · matplotlib · seaborn</div>
         </div>
         <div class="skill-group">
           <div class="label">Data Wrangling</div>
-          <div class="items">tidyverse · pandas · dplyr · NumPy · SciPy</div>
+          <div class="items">tidyverse · pandas · NumPy · SciPy · dplyr</div>
         </div>
         <div class="skill-group">
           <div class="label">Machine Learning</div>
           <div class="items">scikit-learn · Random Forest · Gradient Boosting · classification · regression</div>
         </div>
         <div class="skill-group">
-          <div class="label">Clustering</div>
-          <div class="items">K-Means · target encoding · feature importance</div>
-        </div>
-        <div class="skill-group">
-          <div class="label">Geospatial</div>
-          <div class="items">ggmap · Stadia Maps · coordinate filtering</div>
-        </div>
-        <div class="skill-group">
-          <div class="label">Statistics</div>
-          <div class="items">IQR outlier removal · Pearson &amp; Spearman correlation · feature engineering</div>
+          <div class="label">Clustering &amp; Geospatial</div>
+          <div class="items">K-Means · ggmap · Stadia Maps · coordinate filtering</div>
         </div>
         <div class="skill-group">
           <div class="label">Reinforcement Learning</div>
           <div class="items">optimal control · policy optimization · robotics</div>
         </div>
         <div class="skill-group">
+          <div class="label">Robotics &amp; Control</div>
+          <div class="items">kinematics · mechatronics · Arduino · control systems</div>
+        </div>
+        <div class="skill-group">
           <div class="label">Environment</div>
-          <div class="items">Jupyter · RStudio · Git</div>
+          <div class="items">Jupyter · RStudio · Git &middot; GitHub Pages</div>
         </div>
       </div>
     </section>
@@ -307,7 +206,7 @@
     <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>Open to data analytics and data science opportunities. Reach out via
+      <p>Open to data science and robotics opportunities. Reach out via
         <a href="mailto:goboh@position.8shield.net">email</a> or
         <a href="https://github.com/GordonOboh" target="_blank">GitHub</a>.
       </p>
